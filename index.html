@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+                
+				<span class="contact100-form-title">
+					TEAM FSP REQUIREMENT
+				</span>
+                <p>
+                    The FSP requirement is a physical test spread over several exercises that a person must pass in order to join our team. It must be passed according to the different constraints: Time limits, amplitude, quality of movement execution, minimum load. To join the team he will have to pass each of the 4 movements of Street Lifting with a minimum weight according to his body weight. If he succeeds, his profile will then be analyzed to know if the motivations and objectives of the athlete correspond to those of Team FSP.
+                </p>
+                <br>
+                <p>
+                This tool allows from the estimation of your 1RM to see where you are in relation to our expectations. It is just a simulation and does not replace a real test.</p>
+                <br>
+
+				<div class="wrap-input100 validate-input" data-validate="This field is missing!">
+					<label class="label-input100" for="bw">Bodyweight</label>
+					<input id="bw" class="input100" type="number" name="bw" placeholder="Enter your bodyweight in kg...">
+					<span class="focus-input100"></span>
+				</div>
+                
+                <div class="wrap-input100 validate-input" data-validate="This field is missing!">
+					<label class="label-input100" for="mu">1RM Muscle-up</label>
+					<input id="mu" class="input100" type="number" name="mu" placeholder="Enter your estimated 1RM in Muscle-up...">
+					<span class="focus-input100"></span>
+				</div>
+                                                
+                <div class="wrap-input100 validate-input" data-validate="This field is missing!">
+					<label class="label-input100" for="di">1RM Dips</label>
+					<input id="di" class="input100" type="number" name="di" placeholder="Enter your estimated 1RM in Dips...">
+					<span class="focus-input100"></span>
+				</div>  
+                
+                <div class="wrap-input100 validate-input" data-validate="This field is missing!">
+					<label class="label-input100" for="pu">1RM Pull-up</label>
+					<input id="pu" class="input100" type="number" name="pu" placeholder="Enter your estimated 1RM in Pull-up...">
+					<span class="focus-input100"></span>
+				</div> 
+                
+                <div class="wrap-input100 validate-input" data-validate="This field is missing!">
+					<label class="label-input100" for="sq">1RM Squat</label>
+					<input id="sq" class="input100" type="number" name="sq" placeholder="Enter your estimated 1RM in Squat...">
+					<span class="focus-input100"></span>
+				</div> 
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						Start the simulation
+					</button>
+				</div>
+
+				<div class="contact100-form-social flex-c-m">
+					<a href="https://www.instagram.com/team.fsp/" style="background-color: black" class="contact100-form-social-item flex-c-m m-r-5">
+						<i class="fa fa-instagram" aria-hidden="true"></i>
+					</a>
+                    
+					<a href="#" class="contact100-form-social-item flex-c-m bg3">
+						<i class="fa fa-youtube-play" aria-hidden="true"></i>
+					</a>
+				</div>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
+			</div>
+		</div>
+	</div>
+    
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Your Results</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+		$(".js-select2").each(function(){
+			$(this).on('select2:open', function (e){
+				$(this).parent().next().addClass('eff-focus-selection');
+			});
+		});
+		$(".js-select2").each(function(){
+			$(this).on('select2:close', function (e){
+				$(this).parent().next().removeClass('eff-focus-selection');
+			});
+		});
+
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+</html>
