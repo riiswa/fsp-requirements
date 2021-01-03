@@ -21,13 +21,13 @@ const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
                 check=false;
             }
         }
-        
+        var testPassed = true;
         if (check) {
             var modalContent = $('.modal-body')
             modalContent.empty()
             var bw = $('#bw').val();
             var data = bw <= 70 ? BW70 : bw <= 80 ? BW80 : bw <= 90 ? BW90 : BWXX;
-            var validation = true
+            
             [Object.keys(NAME).forEach(mov => {
                 var value = Math.ceil($('#' + mov).val());
                 var diff = value - Math.floor(data[mov]*bw)
@@ -37,18 +37,18 @@ const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
                     $('<p></p>').text(`✔️ Well done, you validate the requirements in ${NAME[mov]}`));
                 } else {
                     modalContent.append($('<p></p>').text(`❌ You are missing ${diff} kg in ${NAME[mov]} to validate the requirements.`));
-                    validation=false;
+                    testPassed=false;
                 }
                  
             })];
             
-            modalContent.append($('<br>'))
+            modalContent.append($('<br>'));
                 
-                if (validation) {
-                    modalContent.append($('<p></p>').text('Congratulations you seem to have the pre-requisites to join the team.fsp, you can contact us on instagram 🔥'));
-                } else {
-                    modalContent.append($('<p></p>').text('Unfortunately, you don\'t seem to have the level to validate our tests yet. Continue your training and try again later 💪'));
-                }
+            if (testPassed) {
+                modalContent.append($('<p></p>').text('Congratulations you seem to have the pre-requisites to join the team.fsp, you can contact us on instagram 🔥'));
+            } else {
+                modalContent.append($('<p></p>').text('Unfortunately, you don\'t seem to have the level to validate our tests yet. Continue your training and try again later 💪'));
+            }
             
             $('.modal').modal('show')
                 
