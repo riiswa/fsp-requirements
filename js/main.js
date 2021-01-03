@@ -35,9 +35,9 @@ const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
                 if (diff >= 0) {
                     modalContent.append(
                     $('<p></p>').text(`✔️ Well done, you validate the requirements in ${NAME[mov]}`));
-                    validation=false;
                 } else {
                     modalContent.append($('<p></p>').text(`❌ You are missing ${diff} kg in ${NAME[mov]} to validate the requirements.`));
+                    validation=false;
                 }
                  
             })];
