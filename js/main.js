@@ -1,7 +1,12 @@
-const BW70 = {'mu': 0.29, 'pu': 0.90, 'di':1.4, 'sq':2};
-const BW80 = {'mu': 0.27, 'pu': 0.89, 'di':1.4, 'sq':2};
-const BW90 = {'mu': 0.25, 'pu': 0.83, 'di':1.4, 'sq':2};
-const BWXX = {'mu': 0.20, 'pu': 0.80, 'di':1.3, 'sq':2};
+const BW66 = {'mu': 0.38, 'pu': 1.14, 'di':1.6, 'sq':2.7};
+const BW73 = {'mu': 0.41, 'pu': 1.13, 'di':1.6, 'sq':2.6};
+const BW80 = {'mu': 0.38, 'pu': 1.06, 'di':1.6, 'sq':2.6};
+const BW87 = {'mu': 0.37, 'pu': 1.03, 'di':1.55, 'sq':2.5};
+const BW94 = {'mu': 0.29, 'pu': 0.96, 'di':1.5, 'sq':2.5};
+// const BW70 = {'mu': 0.29, 'pu': 0.90, 'di':1.4, 'sq':2};
+// const BW80 = {'mu': 0.27, 'pu': 0.89, 'di':1.4, 'sq':2};
+// const BW90 = {'mu': 0.25, 'pu': 0.83, 'di':1.4, 'sq':2};
+// const BWXX = {'mu': 0.20, 'pu': 0.80, 'di':1.3, 'sq':2};
 const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
 
 
@@ -26,7 +31,8 @@ const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
             var modalContent = $('.modal-body')
             modalContent.empty()
             var bw = $('#bw').val();
-            var data = bw <= 70 ? BW70 : bw <= 80 ? BW80 : bw <= 90 ? BW90 : BWXX;
+            const truncatedBw = Math.trunc(bw);
+            var data = truncatedBw <= 66 ? BW66 : truncatedBw <= 73 ? BW73 : truncatedBw <= 80 ? BW80 : truncatedBw <= 87 ? BW87 : BW94;
             
             [Object.keys(NAME).forEach(mov => {
                 var value = Math.ceil($('#' + mov).val());
@@ -45,15 +51,12 @@ const NAME = {'mu': 'Muscle-up', 'pu': 'Pull-up', 'di':'Dips', 'sq':'Squat'};
             modalContent.append($('<br>'));
                 
             if (testPassed) {
-                modalContent.append($('<p></p>').text('Congratulations you seem to have the pre-requisites to join the team.fsp, you can contact us on instagram 🔥'));
+                modalContent.append($('<p></p>').text('Congratulations you seem to have the performances pre-requisites to join the @team.fsp, you can contact us on instagram to go further in the process 🔥.'));
             } else {
                 modalContent.append($('<p></p>').text('Unfortunately, you don\'t seem to have the level to validate our tests yet. Continue your training and try again later 💪'));
             }
             
             $('.modal').modal('show')
-                
-        
-            
         }
 
         return false;
